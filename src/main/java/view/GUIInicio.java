@@ -42,7 +42,7 @@ public class GUIInicio extends javax.swing.JFrame {
         jComboBox1.setBackground(new java.awt.Color(0, 102, 153));
         jComboBox1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Azul", "Verde", "Rojo", "Amarillo" }));
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rojo", "Amarillo", "Azul", "Verde" }));
         jComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 110, 30));
 
@@ -98,7 +98,9 @@ public class GUIInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-        // TODO add your handling code here:
+        GUIJuego v2 = new GUIJuego();
+        v2.setLocationRelativeTo(null);
+        v2.setVisible(true);
     }//GEN-LAST:event_btnJugarActionPerformed
 
     private void btnCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreditosActionPerformed
