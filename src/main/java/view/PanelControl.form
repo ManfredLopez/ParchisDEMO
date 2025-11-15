@@ -16,16 +16,39 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+          <Group type="102" attributes="0">
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="lblFichaTurno" min="-2" max="-2" attributes="0"/>
-                  <Component id="lblNumeroDado" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnMenu" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnReinicio" min="-2" max="-2" attributes="0"/>
-                  <Component id="btnDice" min="-2" max="-2" attributes="0"/>
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="21" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Component id="txtPuntosOponente" alignment="0" min="-2" max="-2" attributes="0"/>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="7" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="btnDice" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="txtPuntosJugador" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="lblNumeroDado" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <EmptySpace min="6" pref="6" max="-2" attributes="0"/>
+                                      <Component id="lblFichaTurno" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace min="-2" pref="9" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="btnMenu" min="-2" max="-2" attributes="0"/>
+                                  <Component id="btnReinicio" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                          </Group>
+                      </Group>
+                  </Group>
+                  <Group type="102" alignment="0" attributes="0">
+                      <EmptySpace min="-2" pref="43" max="-2" attributes="0"/>
+                      <Component id="txtTiempo" min="-2" max="-2" attributes="0"/>
+                  </Group>
               </Group>
-              <EmptySpace pref="17" max="32767" attributes="0"/>
+              <EmptySpace pref="18" max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -38,11 +61,17 @@
               <Component id="lblNumeroDado" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="lblFichaTurno" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="92" max="32767" attributes="0"/>
-              <Component id="btnReinicio" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="txtPuntosJugador" min="-2" max="-2" attributes="0"/>
               <EmptySpace type="separate" max="-2" attributes="0"/>
+              <Component id="txtPuntosOponente" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <Component id="txtTiempo" min="-2" max="-2" attributes="0"/>
+              <EmptySpace pref="26" max="32767" attributes="0"/>
+              <Component id="btnReinicio" min="-2" max="-2" attributes="0"/>
+              <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="btnMenu" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="34" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="20" max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -80,6 +109,21 @@
     <Component class="javax.swing.JLabel" name="lblFichaTurno">
       <Properties>
         <Property name="text" type="java.lang.String" value="Ficha Turno"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtTiempo">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Tiempo"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtPuntosJugador">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Puntos Jugador"/>
+      </Properties>
+    </Component>
+    <Component class="javax.swing.JLabel" name="txtPuntosOponente">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Puntos Oponente"/>
       </Properties>
     </Component>
   </SubComponents>

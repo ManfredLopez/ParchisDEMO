@@ -35,17 +35,17 @@ public class TableroCoordenadas {
         new Coordenadas(293, 157), //Casilla 26
         new Coordenadas(293, 136), //Casilla 27
         new Coordenadas(293, 113), //Casilla 28 ️
-        new Coordenadas(293, 90), //Casilla 29 ❇️❇️❇
-        new Coordenadas(293, 67), //Casilla 30
-        new Coordenadas(293, 42), //Casilla 31
-        new Coordenadas(293, 20), //Casilla 32
-        new Coordenadas(293, 0), //Casilla 33
-        new Coordenadas(239, 0), //Casilla 34 ❇️❇️❇
-        new Coordenadas(186, 0), //Casilla 35
-        new Coordenadas(186, 20), //Casilla 36
-        new Coordenadas(186, 42), //Casilla 37 ️
-        new Coordenadas(186, 67), //Casilla 38
-        new Coordenadas(186, 90), //Casilla 39 ❇️❇️❇️
+        new Coordenadas(293, 90),  //Casilla 29 ❇️❇️❇
+        new Coordenadas(293, 67),  //Casilla 30
+        new Coordenadas(293, 42),  //Casilla 31
+        new Coordenadas(293, 20),  //Casilla 32
+        new Coordenadas(293, 0),   //Casilla 33
+        new Coordenadas(239, 0),   //Casilla 34 ❇️❇️❇
+        new Coordenadas(186, 0),   //Casilla 35
+        new Coordenadas(186, 20),  //Casilla 36
+        new Coordenadas(186, 42),  //Casilla 37 ️
+        new Coordenadas(186, 67),  //Casilla 38
+        new Coordenadas(186, 90),  //Casilla 39 ❇️❇️❇️
         new Coordenadas(186, 113), //Casilla 40
         new Coordenadas(186, 136), //Casilla 41
         new Coordenadas(186, 160), //Casilla 42
@@ -53,15 +53,15 @@ public class TableroCoordenadas {
         new Coordenadas(148, 175), //Casilla 44 
         new Coordenadas(125, 175), //Casilla 45
         new Coordenadas(101, 175), //Casilla 46 ❇️❇️❇
-        new Coordenadas(78, 175), //Casilla 47
-        new Coordenadas(54, 175), //Casilla 48
-        new Coordenadas(31, 175), //Casilla 49 ️
-        new Coordenadas(7, 175), //Casilla 50
-        new Coordenadas(7, 227), //Casilla 51 ❇️❇️❇
-        new Coordenadas(7, 280), //Casilla 52
-        new Coordenadas(31, 280), //Casilla 53
-        new Coordenadas(54, 280), //Casilla 54 
-        new Coordenadas(78, 280), //Casilla 55
+        new Coordenadas(78, 175),  //Casilla 47
+        new Coordenadas(54, 175),  //Casilla 48
+        new Coordenadas(31, 175),  //Casilla 49 ️
+        new Coordenadas(7, 175),   //Casilla 50
+        new Coordenadas(7, 227),   //Casilla 51 ❇️❇️❇
+        new Coordenadas(7, 280),   //Casilla 52
+        new Coordenadas(31, 280),  //Casilla 53
+        new Coordenadas(54, 280),  //Casilla 54 
+        new Coordenadas(78, 280),  //Casilla 55
         new Coordenadas(101, 280), //Casilla 56 ❇️❇️❇
         new Coordenadas(125, 280), //Casilla 57
         new Coordenadas(148, 280), //Casilla 58
@@ -140,10 +140,10 @@ public class TableroCoordenadas {
         return recorrido.length;
     }
 
-    public int AvanzarFichaWin(int colorId) {
+    public int getAvanzarFichaWin(int colorId) {
         return caminoWin[colorId].length;
     }
-
+    
     public Coordenadas getMeta(int colorId) {
         return meta[colorId];
     }

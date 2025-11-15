@@ -36,31 +36,30 @@ public class PanelTablero extends javax.swing.JPanel {
     public JLabel getImgFichaV() {
         return imgFichaV;
     }
-
-    
     
     public void setTablero(TableroCoordenadas tablero) {
     this.tablero = tablero;
     }
     
     
+    
     public PanelTablero() {
         initComponents();
 
-        this.addMouseListener(new MouseAdapter() {
-            @Override
-            public void mousePressed(MouseEvent e) {
-                Point p = e.getPoint();
-                moverFicha(p);
-            }
-
-        });
-    }
-
-    public void moverFicha(Point p) {
-        //Clase point
-        imgFichaV.setLocation(p);
-        System.out.println("Coordenadas : " + p.x + " , " + p.y);
+//        this.addMouseListener(new MouseAdapter() {
+//            @Override
+//            public void mousePressed(MouseEvent e) {
+//                Point p = e.getPoint();
+//                moverFicha(p);
+//            }
+//
+//        });
+//    }
+//
+//    public void moverFicha(Point p) {
+//        //Clase point
+//        imgFichaV.setLocation(p);
+//        System.out.println("Coordenadas : " + p.x + " , " + p.y);
     }
 
     /**
@@ -107,16 +106,16 @@ public class PanelTablero extends javax.swing.JPanel {
 
     public JLabel labelJugador(int colorId) {
         if (colorId == 0) {
-            return imgFichaV; //rojo
+            return imgFichaR; //rojo
         }
          if (colorId == 1) {
-            return imgFichaV; // amarillo
+            return imgFichaAm; // amarillo
         }
           if (colorId == 2) {
-            return imgFichaV; //azul
+            return imgFichaAz; //azul
         }
            if (colorId == 3) {
-            return imgFichaV; //
+            return imgFichaV; //verde
         }
         return null;
     }

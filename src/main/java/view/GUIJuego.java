@@ -1,34 +1,22 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
+
+import controller.ControladorJuego;
 
 /**
  *
  * @author mjlop
  */
 public class GUIJuego extends javax.swing.JFrame {
-    
+
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(GUIJuego.class.getName());
 
-    /**
-     * Creates new form GUIJuego
-     */
-    public GUIJuego() {
+    private ControladorJuego controlador; // Faltaba este atributo
+
+    public GUIJuego(ControladorJuego controller) {
         initComponents();
+        this.controlador = controller;
+        controlador.conectarVistas(panelControl1, panelTablero1);
     }
-
-    public PanelControl getPanelControl1() {
-        return panelControl1;
-    }
-
-    public PanelTablero getPanelTablero1() {
-        return panelTablero1;
-    }
-
-    
-    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always

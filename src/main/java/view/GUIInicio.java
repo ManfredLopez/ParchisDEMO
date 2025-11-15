@@ -1,9 +1,10 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JFrame.java to edit this template
- */
 package view;
 
+import controller.ControladorJuego;
+//import static java.awt.SystemColor.control;
+//import java.awt.event.ActionEvent;
+import view.GUIJuego;
+import model.*;
 /**
  *
  * @author mjlop
@@ -15,8 +16,12 @@ public class GUIInicio extends javax.swing.JFrame {
     /**
      * Creates new form GUIInicio
      */
+    
+    private Sound sonido = new Sound();
+    
     public GUIInicio() {
         initComponents();
+        sonido.musicaFondoPrincipal();
     }
 
     /**
@@ -28,7 +33,7 @@ public class GUIInicio extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jComboBox1 = new javax.swing.JComboBox<>();
+        comboColor = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
         btnJugar = new javax.swing.JButton();
         btnInstrucciones = new javax.swing.JButton();
@@ -39,12 +44,17 @@ public class GUIInicio extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jComboBox1.setBackground(new java.awt.Color(0, 102, 153));
-        jComboBox1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
-        jComboBox1.setForeground(new java.awt.Color(255, 255, 255));
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rojo", "Amarillo", "Azul", "Verde" }));
-        jComboBox1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
-        getContentPane().add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 110, 30));
+        comboColor.setBackground(new java.awt.Color(0, 102, 153));
+        comboColor.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
+        comboColor.setForeground(new java.awt.Color(255, 255, 255));
+        comboColor.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Rojo", "Amarillo", "Azul", "Verde" }));
+        comboColor.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        comboColor.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                comboColorActionPerformed(evt);
+            }
+        });
+        getContentPane().add(comboColor, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 320, 110, 30));
 
         jLabel1.setFont(new java.awt.Font("Segoe UI Black", 0, 18)); // NOI18N
         jLabel1.setText("Selección de color");
@@ -65,6 +75,11 @@ public class GUIInicio extends javax.swing.JFrame {
         btnInstrucciones.setForeground(new java.awt.Color(255, 255, 255));
         btnInstrucciones.setText("Instrucciones");
         btnInstrucciones.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
+        btnInstrucciones.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnInstruccionesActionPerformed(evt);
+            }
+        });
         getContentPane().add(btnInstrucciones, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 420, 130, 40));
 
         btnHistoria.setBackground(new java.awt.Color(0, 102, 153));
@@ -98,9 +113,16 @@ public class GUIInicio extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
-        GUIJuego v2 = new GUIJuego();
+        int colorId = comboColor.getSelectedIndex();
+      
+        ControladorJuego ctrl = new ControladorJuego(colorId);
+        
+        GUIJuego v2 = new GUIJuego(ctrl);
         v2.setLocationRelativeTo(null);
         v2.setVisible(true);
+        this.dispose();
+        sonido.click();
+        sonido.detenerFondo();
     }//GEN-LAST:event_btnJugarActionPerformed
 
     private void btnCreditosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCreditosActionPerformed
@@ -108,8 +130,26 @@ public class GUIInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnCreditosActionPerformed
 
     private void btnHistoriaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnHistoriaActionPerformed
-        // TODO add your handling code here:
+        GUIHistoria historia = new GUIHistoria();
+        historia.setVisible(true);
+        historia.setLocationRelativeTo(null);
+        this.setVisible(false);
+        sonido.click();
+        sonido.detenerFondo();
     }//GEN-LAST:event_btnHistoriaActionPerformed
+
+    private void comboColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboColorActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_comboColorActionPerformed
+
+    private void btnInstruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstruccionesActionPerformed
+        GUIInstrucciones inst = new GUIInstrucciones();
+        inst.setVisible(true);
+        inst.setLocationRelativeTo(null);
+        this.setVisible(false);
+        sonido.click();
+        sonido.detenerFondo();
+    }//GEN-LAST:event_btnInstruccionesActionPerformed
 
 
 
@@ -118,8 +158,8 @@ public class GUIInicio extends javax.swing.JFrame {
     private javax.swing.JButton btnHistoria;
     private javax.swing.JButton btnInstrucciones;
     private javax.swing.JButton btnJugar;
+    private javax.swing.JComboBox<String> comboColor;
     private javax.swing.JLabel imgFondo;
-    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     // End of variables declaration//GEN-END:variables
 }
