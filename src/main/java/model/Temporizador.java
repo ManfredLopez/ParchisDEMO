@@ -14,28 +14,26 @@ public class Temporizador extends Thread {
     private int seconds;
 
     public Temporizador(PanelControl pPanel) {
-        this.panel = panel;
+        this.panel = pPanel;
         this.active = true;
         this.seconds = 0;
     }
 
-    public void run() {
+public void run() {
+    while (active) {
+        try {
+            Thread.sleep(1000);
+            seconds++;
 
-        while (active) {
-            try {
-                Thread.sleep(1000);
-            } catch (InterruptedException e) {
-            }
-            active = false;
+            SwingUtilities.invokeLater(() -> {
+                panel.setTxtTiempo(seconds);
+            });
+
+        } catch (InterruptedException e) {
             break;
         }
-        seconds++;
-        SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                panel.setTxtTiempo(seconds);
-            }
-        });
     }
+}
 
     public void detener() {
         active = false;

@@ -12,9 +12,9 @@ public class GUIJuego extends javax.swing.JFrame {
 
     private ControladorJuego controlador; // Faltaba este atributo
 
-    public GUIJuego(ControladorJuego controller) {
+    public GUIJuego(ControladorJuego ctrl) {
         initComponents();
-        this.controlador = controller;
+        this.controlador = ctrl;
         controlador.conectarVistas(panelControl1, panelTablero1);
     }
     /**

@@ -16,8 +16,8 @@ public class Reglas {
         return totalCasillas;
     }
 
-    public boolean salida(int dice) {
-        return dice == 5;
+    public boolean salida(int dado) {
+        return dado == 5;
     }
 
     public int salidaId(int colorId) {
@@ -28,11 +28,11 @@ public class Reglas {
         return indiceRecorrido == entrada[colorId];
     }
 
-    public int avanzar(int indice, int diceValue) {
+    public int avanzar(int indice, int valorDado) {
         int i;
         //1-6
-        if (diceValue > 0) {
-            for (i = 0; i < diceValue; i++) {
+        if (valorDado > 0) {
+            for (i = 0; i < valorDado; i++) {
                 indice++;
             }
         }
@@ -43,27 +43,27 @@ public class Reglas {
         return indice;
     }
 
-    public boolean posicionFichaEntrada(int colorId, int indice, int diceValue) {
+    public boolean posicionFichaEntrada(int colorId, int indice, int valorDado) {
         int i;
-        if (diceValue > 0) {
-            for (i = 1; i <= diceValue; i++) {
+        if (valorDado > 0) {
+            for (i = 1; i <= valorDado; i++) {
                 indice++;
-                if (diceValue >= totalCasillas) {
+                if (valorDado >= totalCasillas) {
                     totalCasillas--;
                 }
-                if (diceValue == indice) {
+                if (valorDado == indice) {
                     return true;
                 }
             }
         } else {
-            if (diceValue < 0) {
-                for (i = -1; i >= diceValue; i--) {
+            if (valorDado < 0) {
+                for (i = -1; i >= valorDado; i--) {
                     indice++;
                 }
-                if (diceValue < totalCasillas) {
+                if (valorDado < totalCasillas) {
                     totalCasillas++;
                 }
-                if (diceValue == indice) {
+                if (valorDado == indice) {
                     return true;
                 }
             

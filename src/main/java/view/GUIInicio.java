@@ -115,9 +115,9 @@ public class GUIInicio extends javax.swing.JFrame {
     private void btnJugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnJugarActionPerformed
         int colorId = comboColor.getSelectedIndex();
       
-        ControladorJuego ctrl = new ControladorJuego(colorId);
+        ControladorJuego controller = new ControladorJuego(colorId);
         
-        GUIJuego v2 = new GUIJuego(ctrl);
+        GUIJuego v2 = new GUIJuego(controller);
         v2.setLocationRelativeTo(null);
         v2.setVisible(true);
         this.dispose();
@@ -139,7 +139,8 @@ public class GUIInicio extends javax.swing.JFrame {
     }//GEN-LAST:event_btnHistoriaActionPerformed
 
     private void comboColorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboColorActionPerformed
-        // TODO add your handling code here:
+        sonido.click();
+        sonido.detenerFondo();
     }//GEN-LAST:event_comboColorActionPerformed
 
     private void btnInstruccionesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnInstruccionesActionPerformed
@@ -150,8 +151,6 @@ public class GUIInicio extends javax.swing.JFrame {
         sonido.click();
         sonido.detenerFondo();
     }//GEN-LAST:event_btnInstruccionesActionPerformed
-
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton btnCreditos;

@@ -45,21 +45,21 @@ public class Questions {
         {"this se refiere al objeto actual?", "V"},
         {"Se puede crear un objeto sin usar new?", "F"},};
 
-    private String[][] hard = {{"La herencia permite compartir atributos y métodos?", "V"},
-    {"Una clase abstracta puede instanciarse directamente?", "F"},
-    {"Una interfaz puede tener métodos sin implementación?", "V"},
-    {"El polimorfismo permite comportamientos diferentes con el mismo método?", "V"},
-    {"El garbage collector libera memoria automáticamente?", "V"},
-    {"static indica que el atributo pertenece a la clase?", "V"},
-    {"Una excepción no manejada puede detener el programa?", "V"},
-    {"try-catch captura errores en ejecución?", "V"},
-    {"override redefine un método heredado?", "V"},
-    {"La relación has-a describe herencia?", "F"},
-    {"Un Thread permite ejecutar código en paralelo?", "V"},
-    {"super invoca elementos de la clase padre?", "V"},
-    {"O(n²) es más eficiente que O(n)?", "F"},
-    {"HashMap almacena pares clave-valor?", "V"},
-    {"La serialización convierte un objeto en bytes?", "V"},};
+        private String[][] hard = {{"La herencia permite compartir atributos y métodos?", "V"},
+        {"Una clase abstracta puede instanciarse directamente?", "F"},
+        {"Una interfaz puede tener métodos sin implementación?", "V"},
+        {"El polimorfismo permite comportamientos diferentes con el mismo método?", "V"},
+        {"El garbage collector libera memoria automáticamente?", "V"},
+        {"static indica que el atributo pertenece a la clase?", "V"},
+        {"Una excepción no manejada puede detener el programa?", "V"},
+        {"try-catch captura errores en ejecución?", "V"},
+        {"override redefine un método heredado?", "V"},
+        {"La relación has-a describe herencia?", "F"},
+        {"Un Thread permite ejecutar código en paralelo?", "V"},
+        {"super invoca elementos de la clase padre?", "V"},
+        {"O(n²) es más eficiente que O(n)?", "F"},
+        {"HashMap almacena pares clave-valor?", "V"},
+        {"La serialización convierte un objeto en bytes?", "V"},};
 
     public boolean preguntasVF(int difficulty) {
         String[][] banco;

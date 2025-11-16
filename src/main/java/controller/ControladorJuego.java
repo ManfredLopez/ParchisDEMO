@@ -15,8 +15,8 @@ import view.*;
 public class ControladorJuego implements ActionListener {
 
     // ---- vista ----
-    private PanelControl panelControl;
-    private PanelTablero panelTablero;
+    private PanelControl panelControl1;
+    private PanelTablero panelTablero1;
 
     // ---- modelo ----
     private TableroCoordenadas tablero;
@@ -59,7 +59,7 @@ public class ControladorJuego implements ActionListener {
         } else if (colorId > 3) {
             colorJugadorId = 3;
         } else {
-            colorId = colorJugadorId;
+            colorJugadorId = colorId;
         }
         colorOponenteId = emparejarColor(colorJugadorId);
 
@@ -82,23 +82,24 @@ public class ControladorJuego implements ActionListener {
 
     //contar la vista a los paneles de la vista.
     public void conectarVistas(PanelControl pc, PanelTablero pt) {
-        panelControl = pc;
-        panelTablero = pt;
+        panelControl1 = pc;
+        panelTablero1 = pt;
+        panelTablero1.setTablero(tablero);
 
         // listeners (el controlador escucha los botones)
-        panelControl.getBtnDice().addActionListener(this);
-        panelControl.getBtnReinicio().addActionListener(this);
+        panelControl1.getBtnDice().addActionListener(this);
+        panelControl1.getBtnReinicio().addActionListener(this);
 
         // estado inicial en Interfaz gráfica
         ubicarEnHome();
-        panelControl.setTextoNumeroDado(0);
-        panelControl.setTextoTurno(colores.nombre(colorJugadorId));
-        panelControl.setTxtPuntosJugador(jugador.getPuntos());
-        panelControl.setTxtPuntosOponente(oponente.getPuntos());
-        panelControl.setTxtTiempo(0);
+        panelControl1.setTextoNumeroDado(0);
+        panelControl1.setTextoTurno(colores.nombre(colorJugadorId));
+        panelControl1.setTxtPuntosJugador(jugador.getPuntos());
+        panelControl1.setTxtPuntosOponente(oponente.getPuntos());
+        panelControl1.setTxtTiempo(0);
 
         // temporizador global de partida (cuenta hacia arriba)
-        temporizador = new Temporizador(panelControl);
+        temporizador = new Temporizador(panelControl1);
         temporizador.start();
         
         sonido.musicaFondo();
@@ -122,8 +123,8 @@ public class ControladorJuego implements ActionListener {
     private void ubicarEnHome() {
         Coordenadas cj = home.getHome(colorJugadorId);
         Coordenadas co = home.getHome(colorOponenteId);
-        panelTablero.moverFicha(colorJugadorId, cj.getX(), cj.getY());
-        panelTablero.moverFicha(colorOponenteId, co.getX(), co.getY());
+        panelTablero1.moverFicha(colorJugadorId, cj.getX(), cj.getY());
+        panelTablero1.moverFicha(colorOponenteId, co.getX(), co.getY());
     }
 
     //Operador logico de negacion !
@@ -137,13 +138,14 @@ public class ControladorJuego implements ActionListener {
         } else {
             nombre = colores.nombre(colorOponenteId);
         }
-        panelControl.setTextoTurno(nombre);
+        panelControl1.setTextoTurno(nombre);
     }
 
     // Metodo jugar, tiene la logica del juego
     public void jugar() {
+        
         int textoDado = dado.lanzar();//usamos el metodo lanzar
-        panelControl.setTextoNumeroDado(textoDado);
+        panelControl1.setTextoNumeroDado(textoDado);
 
         Ficha actual;
         int idColor;
@@ -189,8 +191,8 @@ public class ControladorJuego implements ActionListener {
         if (reglas.salida(tiro)) {
             // al salir, recupera puntos iniciales
             ficha.reiniciarPuntos();
-            panelControl.setTxtPuntosJugador(jugador.getPuntos());
-            panelControl.setTxtPuntosOponente(oponente.getPuntos());
+            panelControl1.setTxtPuntosJugador(jugador.getPuntos());
+            panelControl1.setTxtPuntosOponente(oponente.getPuntos());
             //identificar las reglas
             int salida = reglas.salidaId(idColor);
             
@@ -234,7 +236,7 @@ public class ControladorJuego implements ActionListener {
         if (next >= largo) {
             // META
             Coordenadas m = tablero.getMeta(idColor);
-            panelTablero.moverFicha(idColor, m.getX(), m.getY());
+            panelTablero1.moverFicha(idColor, m.getX(), m.getY());
             f.setPasoWin(largo - 1);
 
             // META: pregunta difícil; si falla, HOME
@@ -255,12 +257,12 @@ public class ControladorJuego implements ActionListener {
 
     private void moverFicha(Ficha f, int idColor) {
         Coordenadas p = tablero.getPosition(f.getIndice());
-        panelTablero.moverFicha(idColor, p.getX(), p.getY());
+        panelTablero1.moverFicha(idColor, p.getX(), p.getY());
     }
 
     private void moverFichaWin(Ficha f, int idColor, int paso) {
         Coordenadas p = tablero.getCaminoWin(idColor, paso);
-        panelTablero.moverFicha(idColor, p.getX(), p.getY());
+        panelTablero1.moverFicha(idColor, p.getX(), p.getY());
     }
 //fase3
 
@@ -328,14 +330,14 @@ public class ControladorJuego implements ActionListener {
             if (mandarHomeSiFalla || f.sinPuntos()) {
                 f.enviarHome();
                 Coordenadas c = home.getHome(idColor);
-                panelTablero.moverFicha(idColor, c.getX(), c.getY());
+                panelTablero1.moverFicha(idColor, c.getX(), c.getY());
             }
         }
         // refrescar interfaz graficas de puntos
         if (idColor == colorJugadorId) {
-            panelControl.setTxtPuntosJugador(f.getPuntos());
+            panelControl1.setTxtPuntosJugador(f.getPuntos());
         } else {
-            panelControl.setTxtPuntosOponente(f.getPuntos());
+            panelControl1.setTxtPuntosOponente(f.getPuntos());
         }
     }
 
@@ -343,9 +345,9 @@ public class ControladorJuego implements ActionListener {
     public void reiniciar() {
         jugador.reset();
         oponente.reset();
-        panelControl.setTextoNumeroDado(0);
-        panelControl.setTxtPuntosJugador(jugador.getPuntos());
-        panelControl.setTxtPuntosOponente(oponente.getPuntos());
+        panelControl1.setTextoNumeroDado(0);
+        panelControl1.setTxtPuntosJugador(jugador.getPuntos());
+        panelControl1.setTxtPuntosOponente(oponente.getPuntos());
         turno = true;
         ubicarEnHome();
         cambiarTurnoYActualizar();
@@ -358,10 +360,10 @@ public class ControladorJuego implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object fuente = e.getSource();
-        if (fuente == panelControl.getBtnDice()) {
+        if (fuente == panelControl1.getBtnDice()) {
             sonido.click();
             jugar();
-        } else if (fuente == panelControl.getBtnReinicio()) {
+        } else if (fuente == panelControl1.getBtnReinicio()) {
             sonido.click();
             reiniciar();
         }

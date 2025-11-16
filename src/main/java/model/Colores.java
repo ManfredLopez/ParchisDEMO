@@ -6,10 +6,10 @@ package model;
  */
 public class Colores {
 
-    private int red = 0;
-    private int yellow = 1;
-    private int blue = 2;
-    private int green = 3;
+    private int rojo = 0;
+    private int amarillo = 1;
+    private int azul = 2;
+    private int verde = 3;
 
     public String nombre(int id) { //método para mostrar el
         switch (id) {              //texto de la etiqueta (setLblFichaTurno)

@@ -13,7 +13,6 @@ view\PanelControl$3.class
 model\Temporizador.class
 model\Dado.class
 view\GUIJuego.class
-model\Temporizador$2.class
 model\Reglas.class
 view\GUIInicio$2.class
 main\ParchisDEMO.class

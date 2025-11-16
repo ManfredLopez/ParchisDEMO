@@ -151,4 +151,15 @@ public class TableroCoordenadas {
     public Coordenadas getCaminoWin(int colorId, int step) {
         return caminoWin[colorId][step];
     }
+    
+    public int getSalida(int colorId) {
+    switch (colorId) {
+        case 0: return salida_rojo;
+        case 1: return salida_amarillo;
+        case 2: return salida_azul;
+        case 3: return salida_verde;
+    }
+    return -1;
+}
+    
 }

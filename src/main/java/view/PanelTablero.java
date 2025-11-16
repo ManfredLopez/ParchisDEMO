@@ -1,12 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/GUIForms/JPanel.java to edit this template
- */
 package view;
 
-import java.awt.Point;
-import java.awt.event.MouseAdapter;
-import java.awt.event.MouseEvent;
 import javax.swing.JLabel;
 import model.TableroCoordenadas;
 
@@ -21,45 +14,57 @@ public class PanelTablero extends javax.swing.JPanel {
      */
     private TableroCoordenadas tablero;
 
-    public JLabel getImgFichaAm() {
-        return imgFichaAm;
+    public JLabel getlblFichaAm() {
+        return lblFichaAm;
     }
 
-    public JLabel getImgFichaAz() {
-        return imgFichaAz;
+    public JLabel getlblFichaAz() {
+        return lblFichaAz;
     }
 
-    public JLabel getImgFichaR() {
-        return imgFichaR;
+    public JLabel getlblFichaR() {
+        return lblFichaR;
     }
 
-    public JLabel getImgFichaV() {
-        return imgFichaV;
+    public JLabel getlblFichaV() {
+        return lblFichaV;
     }
-    
-    public void setTablero(TableroCoordenadas tablero) {
-    this.tablero = tablero;
-    }
-    
-    
-    
+
     public PanelTablero() {
         initComponents();
+        setComponentZOrder(imgTablero, getComponentCount() - 1);
+    }
 
-//        this.addMouseListener(new MouseAdapter() {
-//            @Override
-//            public void mousePressed(MouseEvent e) {
-//                Point p = e.getPoint();
-//                moverFicha(p);
-//            }
-//
-//        });
-//    }
-//
-//    public void moverFicha(Point p) {
-//        //Clase point
-//        imgFichaV.setLocation(p);
-//        System.out.println("Coordenadas : " + p.x + " , " + p.y);
+    public void moverFicha(int colorId, int x, int y) {
+        javax.swing.JLabel lbl = labelJugador(colorId);
+        if (lbl != null) {
+            lbl.setLocation(x, y);
+            // poner la ficha al frente para garantizar visibilidad
+            setComponentZOrder(lbl, 0); // 0 = arriba de todo
+            revalidate();
+            repaint();
+        }
+    }
+
+    public JLabel labelJugador(int colorId) {
+        if (colorId == 0) {
+            return lblFichaR; //rojo
+        }
+        if (colorId == 1) {
+            return lblFichaAm; // amarillo
+        }
+        if (colorId == 2) {
+            return lblFichaAz; //azul
+        }
+        if (colorId == 3) {
+            return lblFichaV; //verde
+        }
+        return null;
+    }
+
+    public void setTablero(TableroCoordenadas tablero) {
+        this.tablero = tablero;
+
     }
 
     /**
@@ -72,60 +77,38 @@ public class PanelTablero extends javax.swing.JPanel {
     private void initComponents() {
 
         jSpinner1 = new javax.swing.JSpinner();
-        imgFichaR = new javax.swing.JLabel();
-        imgFichaAm = new javax.swing.JLabel();
-        imgFichaAz = new javax.swing.JLabel();
-        imgFichaV = new javax.swing.JLabel();
+        lblFichaR = new javax.swing.JLabel();
+        lblFichaAm = new javax.swing.JLabel();
+        lblFichaAz = new javax.swing.JLabel();
+        lblFichaV = new javax.swing.JLabel();
         imgTablero = new javax.swing.JLabel();
 
         setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        imgFichaR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaRoja.png"))); // NOI18N
-        add(imgFichaR, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 20, -1));
+        lblFichaR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaRoja.png"))); // NOI18N
+        add(lblFichaR, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 20, -1));
 
-        imgFichaAm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaAmarilla.png"))); // NOI18N
-        add(imgFichaAm, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, -1, -1));
+        lblFichaAm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaAmarilla.png"))); // NOI18N
+        add(lblFichaAm, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, -1, -1));
 
-        imgFichaAz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaAzul.png"))); // NOI18N
-        add(imgFichaAz, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, -1, 30));
+        lblFichaAz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaAzul.png"))); // NOI18N
+        add(lblFichaAz, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, -1, 30));
 
-        imgFichaV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaVerde.png"))); // NOI18N
-        add(imgFichaV, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, -1, 30));
+        lblFichaV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaVerde.png"))); // NOI18N
+        add(lblFichaV, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, -1, 30));
 
         imgTablero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tablerografico.png"))); // NOI18N
         imgTablero.setText("Tablero");
         add(imgTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
     }// </editor-fold>//GEN-END:initComponents
 
-    public void moverFicha(int colorId, int x, int y) {
-        JLabel lbl = labelJugador(colorId);
-        if(lbl != null)
-        lbl.setLocation(x, y)
-        ;
-    }
-
-    public JLabel labelJugador(int colorId) {
-        if (colorId == 0) {
-            return imgFichaR; //rojo
-        }
-         if (colorId == 1) {
-            return imgFichaAm; // amarillo
-        }
-          if (colorId == 2) {
-            return imgFichaAz; //azul
-        }
-           if (colorId == 3) {
-            return imgFichaV; //verde
-        }
-        return null;
-    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel imgFichaAm;
-    private javax.swing.JLabel imgFichaAz;
-    private javax.swing.JLabel imgFichaR;
-    private javax.swing.JLabel imgFichaV;
     private javax.swing.JLabel imgTablero;
     private javax.swing.JSpinner jSpinner1;
+    private javax.swing.JLabel lblFichaAm;
+    private javax.swing.JLabel lblFichaAz;
+    private javax.swing.JLabel lblFichaR;
+    private javax.swing.JLabel lblFichaV;
     // End of variables declaration//GEN-END:variables
 }
