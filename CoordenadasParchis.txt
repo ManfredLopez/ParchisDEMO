@@ -1,0 +1,118 @@
+CASILLAS DE CASAS
+Casa verde 77, 390
+Casa azul 401, 66
+Casa amarilla 401, 390
+Casa roja 77, 66
+///
+Casilla 1 293, 460
+Casilla 2 293, 435
+Casilla 3 293, 413
+Casilla 4 293, 389
+	Casilla 5 293, 365
+Casilla 6 293, 342
+Casilla 7 293, 320
+Casilla 8 293, 297
+Casilla 9 307, 280
+Casilla 10 331, 280
+Casilla 11 354, 280
+	Casilla 12 377, 280
+Casilla 13 400, 280
+Casilla 14 424, 280
+Casilla 15 448, 280
+Casilla 16 471, 280
+	Casilla 17 471, 227
+Casilla 18 471, 175
+Casilla 19 448, 175
+Casilla 20 424, 175
+Casilla 21 400, 175
+	Casilla 22 377, 175
+Casilla 23 354, 175
+Casilla 24 331, 175
+Casilla 25 305, 190
+Casilla 26 293, 157
+Casilla 27 293, 136
+Casilla 28 293, 113
+	Casilla 29 293, 90
+Casilla 30 293, 67
+Casilla 31 293, 42
+Casilla 32 293, 20
+Casilla 33 293, 0
+	Casilla 34 239, 0
+Casilla 35 186, 0
+Casilla 36 186, 20
+Casilla 37 186, 42
+Casilla 38 186, 67
+	Casilla 39 186, 90
+Casilla 40 186, 113
+Casilla 41 186, 136
+Casilla 42 186, 160
+Casilla 43 172, 175 
+Casilla 44 148, 175
+Casilla 45 125, 175
+	Casilla 46 101, 175
+Casilla 47 78, 175
+Casilla 48 54, 175
+Casilla 49 31, 175
+Casilla 50 7, 175
+	Casilla 51 7, 227
+Casilla 52 7, 280
+Casilla 53 31, 280
+Casilla 54 54, 280
+Casilla 55 78, 280
+	Casilla 56 101, 280
+Casilla 57 125, 280
+Casilla 58 148, 280
+Casilla 59 172, 280
+Casilla 60 185, 297
+Casilla 61 185, 320
+Casilla 62 185, 340
+	Casilla 63 185, 365
+Casilla 64 185, 390
+Casilla 65 185, 412
+Casilla 66 185, 436
+Casilla 67 185, 460
+	Casilla 68 239, 460
+///
+CASILLAS DE CaminoWin
+Verde 
+31, 230
+54, 230
+78, 230
+101, 230
+125, 230
+148, 230
+172, 230
+Azul
+448, 230
+424, 230
+400, 230
+377, 230
+354, 230
+331, 230
+305, 230
+Amarillo
+239, 297
+239, 320
+239, 340
+239, 365
+239, 390
+239, 412
+239, 436
+Rojo
+239, 20
+239, 42
+239, 67
+239, 90
+239, 113
+239, 136
+239, 160
+///
+CASILLAS WIN
+Rojo 239, 200
+Amarillo 239, 267
+Azul 276, 230
+Verde  204, 230
+
+
+
+
