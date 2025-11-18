@@ -83,23 +83,28 @@ public class PanelTablero extends javax.swing.JPanel {
         lblFichaV = new javax.swing.JLabel();
         imgTablero = new javax.swing.JLabel();
 
-        setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        setLayout(null);
 
         lblFichaR.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaRoja.png"))); // NOI18N
-        add(lblFichaR, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 20, -1));
+        add(lblFichaR);
+        lblFichaR.setBounds(80, 70, 20, 31);
 
         lblFichaAm.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaAmarilla.png"))); // NOI18N
-        add(lblFichaAm, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 390, -1, -1));
+        add(lblFichaAm);
+        lblFichaAm.setBounds(400, 390, 21, 32);
 
         lblFichaAz.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaAzul.png"))); // NOI18N
-        add(lblFichaAz, new org.netbeans.lib.awtextra.AbsoluteConstraints(400, 70, -1, 30));
+        add(lblFichaAz);
+        lblFichaAz.setBounds(400, 70, 21, 30);
 
         lblFichaV.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/FichaVerde.png"))); // NOI18N
-        add(lblFichaV, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 390, -1, 30));
+        add(lblFichaV);
+        lblFichaV.setBounds(80, 390, 21, 30);
 
         imgTablero.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/tablerografico.png"))); // NOI18N
         imgTablero.setText("Tablero");
-        add(imgTablero, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 500, -1));
+        add(imgTablero);
+        imgTablero.setBounds(0, 0, 500, 500);
     }// </editor-fold>//GEN-END:initComponents
 
 
